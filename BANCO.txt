@@ -1,0 +1,13 @@
+#Criação do banco de dados
+#Possuí apenas uma tabela com duas colunas
+#Um dominio poderá apenas ter um IP
+#Um IP estará atrelado a apenas um dominio.
+#Autor: Jesue lucas Data: 08/07/2015 versão:1
+
+
+create table servidores (
+	dominio varchar(50) not null unique,
+	ip		varchar(15) not null unique,
+	primary key(dominio,ip)
+);
+

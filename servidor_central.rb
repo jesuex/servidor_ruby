@@ -22,6 +22,7 @@ loop {
   solicitacao = s.split
   cliente_ip = sender[3]
   cliente_port = sender[1]
+  #Registro de domino e IP
   if solicitacao[0] == "REG"
     if solicitacao[1] != nil && solicitacao[2] != nil
       begin
@@ -39,6 +40,7 @@ loop {
       puts " Falha Inesperada "
       socket.send "FALHA", 0, cliente_ip, cliente_port
     end
+	#tratando solicitações do comando IP
   elsif solicitacao[0] == "IP"
     if solicitacao[1] != nil
       puts "Recebendo IP!"
